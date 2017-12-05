@@ -103,3 +103,6 @@ MEDIA_TYPE_CHOICES=((PUBLICATION, PUBLICATION),
                         (GALLERY,GALLERY ),
 
                         )
+
+#___________OTP TYPE_______________
+SIGNUP='signup'

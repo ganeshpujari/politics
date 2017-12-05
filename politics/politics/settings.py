@@ -134,3 +134,4 @@ SETTINGS_DIR = os.path.dirname(__file__)
 STATIC_ROOT = os.path.join(SETTINGS_DIR, '/static/')
 STATICFILES_DIRS = (
     )
+IS_GENERATE_OTP=True

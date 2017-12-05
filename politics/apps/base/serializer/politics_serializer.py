@@ -22,6 +22,11 @@ class PoliticianSerializer(serializers.ModelSerializer):
         model = Politician
         fields =('id','user','date_of_birth','gender','birth_place','nationality','education','permanent_address','current_address')
 
+class PoliticianSerializerMicro(serializers.ModelSerializer):
+    class Meta:
+        model = Politician
+        fields =('id','user','date_of_birth','gender','birth_place','nationality')
+
 
 class PoliticianSerializerMin(serializers.ModelSerializer):
     user=UserSerializerMin()
