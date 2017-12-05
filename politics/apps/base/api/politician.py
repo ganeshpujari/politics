@@ -20,4 +20,3 @@ class PoliticianList(viewsets.ModelViewSet):
         serializer=PoliticianSerializer(poliObjs,many=True)
         return Response(serializer.data)
 
-

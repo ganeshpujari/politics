@@ -10,7 +10,6 @@ class PoliticianEducation(CreateUpdateModel):
     name=models.CharField(max_length=250,null=True,blank=True)
     specialization=models.CharField(max_length=250,null=True,blank=True)
     university=models.CharField(max_length=250,null=True,blank=True)
-    grade=models.CharField(max_length=250,choices=EDUCATION_GRADE_CHOICES)
     start=models.DateField(null=True,blank=True)
     end=models.DateField(null=True,blank=True)
     politician=models.ForeignKey(Politician,null=True,blank=True)
