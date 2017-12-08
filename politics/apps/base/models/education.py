@@ -14,7 +14,7 @@ class PoliticianEducation(CreateUpdateModel):
     end=models.DateField(null=True,blank=True)
     politician=models.ForeignKey(Politician,null=True,blank=True)
 
-    def __str__(self):
-        return self.category
+    # def __str__(self):
+    #     return self.category
 
 admin.site.register(PoliticianEducation)
