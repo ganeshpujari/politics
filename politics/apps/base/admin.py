@@ -6,6 +6,7 @@ from apps.base.models.family_description import PoliticianFamily
 from apps.base.models.achievements import Achievements
 from apps.base.models.assets import PoliticianAssets
 from apps.base.models.media import Media
+from apps.base.models.gallery import Gallery,Publication
 
 class EducationInline(admin.TabularInline):
     model = PoliticianEducation
@@ -24,10 +25,10 @@ class AchievementsInline(admin.TabularInline):
     extra = 1
     can_delete = True
 
-class MediaInline(admin.TabularInline):
-    model = Media
+class GalleryInline(admin.TabularInline):
+    model = Gallery
     fields = [
-        "type", "title", "url",
+        "title", "description","media",
 
     ]
     extra = 1
@@ -45,7 +46,7 @@ class EducationInline(admin.TabularInline):
 class PoliticalWorkInline(admin.TabularInline):
     model = Work
     fields = [
-        "type","title", "description", "start",
+        "type","title", "description","media", "start",
         "end",'city','state','country','latitude','longitude'
     ]
 
@@ -59,9 +60,16 @@ class PoliticianFamilyInline(admin.TabularInline):
     model = PoliticianFamily
     fields = [
         "relation","name", "date_of_birth", "occupation",
-
     ]
+    extra = 1
+    can_delete = True
 
+
+class PublicationInline(admin.TabularInline):
+    model = Publication
+    fields = [
+        "title", "description","media",
+    ]
     extra = 1
     can_delete = True
 
@@ -77,7 +85,8 @@ class PoliticianAssetsInline(admin.TabularInline):
 
 class PoliticianAdmin(admin.ModelAdmin):
     raw_id_fields = ('user',)
-    inlines = [EducationInline,PoliticalWorkInline,PoliticianFamilyInline,PoliticianAssetsInline,MediaInline,AchievementsInline]
+    inlines = [GalleryInline,EducationInline,PoliticalWorkInline,PoliticianFamilyInline,PoliticianAssetsInline,AchievementsInline]
 
 admin.site.register(Politician,PoliticianAdmin)
 admin.site.register(Work)
+admin.site.register(Media)

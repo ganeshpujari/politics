@@ -15,7 +15,7 @@ class Voter(CreateUpdateModel):
     # education=models.ManyToManyField(Education,null=True,blank=True)
     mobile=models.BigIntegerField(null=True,blank=True)
     adhar_uid=models.CharField(max_length=250,null=True,blank=True)
-    Voter_id=models.CharField(max_length=250,null=True,blank=True)
+    Voter_uid=models.CharField(max_length=250,null=True,blank=True)
     religion=models.CharField(max_length=250,null=True,blank=True)
     caste=models.CharField(max_length=250,null=True,blank=True)
     profile_pic=models.ImageField(null=True,blank=True)
